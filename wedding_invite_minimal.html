@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Invitation</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #fdfaf6;
+      color: #333;
+      overflow-x: hidden;
+    }
+    section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      text-align: center;
+    }
+    #typed-text {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    .info {
+      font-family: 'Arial', sans-serif;
+      font-size: 1.2rem;
+      line-height: 2;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 300px;
+    }
+    input, textarea, button {
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #lottie {
+      width: 200px;
+      height: 200px;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Landing Section -->
+  <section>
+    <div id="typed-text"></div>
+    <div id="lottie"></div>
+  </section>
+
+  <!-- Info Section -->
+  <section>
+    <div class="info">
+      <h2>Wedding Details</h2>
+      <p>Date: June 21, 2025</p>
+      <p>Time: 4:00 PM</p>
+      <p>Venue: Rose Garden, Central Park, NY</p>
+    </div>
+  </section>
+
+  <!-- RSVP Section -->
+  <section>
+    <div>
+      <h2>RSVP</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <textarea placeholder="Message (optional)"></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <p>Thank you for your response!</p>
+    </div>
+  </section>
+
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    var typed = new Typed("#typed-text", {
+      strings: ["John & Lara", "Are Getting Married"],
+      typeSpeed: 80,
+      backSpeed: 40,
+      loop: true
+    });
+  </script>
+
+  <!-- Lottie -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
+  <script>
+    var animation = lottie.loadAnimation({
+      container: document.getElementById("lottie"),
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "https://assets10.lottiefiles.com/packages/lf20_qp1q7mct.json"
+    });
+  </script>
+
+</body>
+</html>
